@@ -590,3 +590,6 @@ end
 vinegar=function()
     awful.spawn("flatpak run org.vinegarhq.Vinegar studio run")
 end
+
+awful.spawn("killall flameshot")
+awful.spawn("flameshot")
