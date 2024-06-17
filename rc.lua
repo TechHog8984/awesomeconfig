@@ -585,5 +585,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 lunar=function()
-    awful.spawn(" /usr/bin/Lunar\\ Client-3.2.10.AppImage");
+    awful.spawn("/usr/bin/Lunar\\ Client-3.2.10.AppImage")
+end
+vinegar=function()
+    awful.spawn("flatpak run org.vinegarhq.Vinegar studio run")
 end
