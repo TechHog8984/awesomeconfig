@@ -347,7 +347,18 @@ globalkeys = gears.table.join(
 
     -- User
     awful.key({ modkey, "Mod1" }, "k", mykeyboardlayout.next_layout,
-    		{description = "switch keyboard layout", group = "system"})
+    		{description = "switch keyboard layout", group = "system"}),
+
+    awful.key({ }, "XF86AudioPlay", function() awful.spawn("playerctl play-pause") end,
+    		{description = "play/pause media", group = "media"}),
+    awful.key({ }, "XF86AudioNext", function() awful.spawn("playerctl next") end,
+    		{description = "next media", group = "media"}),
+    awful.key({ }, "XF86AudioPrev", function() awful.spawn("playerctl previous") end,
+    		{description = "previous media", group = "media"}),
+    awful.key({ }, "XF86AudioRaiseVolume", function() awful.spawn("playerctl volume 0.05+") end,
+    		{description = "increase volume", group = "media"}),
+    awful.key({ }, "XF86AudioLowerVolume", function() awful.spawn("playerctl volume 0.05-") end,
+    		{description = "decrease volume", group = "media"})
 )
 
 clientkeys = gears.table.join(
