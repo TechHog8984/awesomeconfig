@@ -52,7 +52,7 @@ end
 beautiful.init("/home/techhog/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "x-terminal-emulator"
+terminal = "alacritty"
 editor = "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -358,7 +358,10 @@ globalkeys = gears.table.join(
     awful.key({ }, "XF86AudioRaiseVolume", function() awful.spawn("playerctl volume 0.05+") end,
     		{description = "increase volume", group = "media"}),
     awful.key({ }, "XF86AudioLowerVolume", function() awful.spawn("playerctl volume 0.05-") end,
-    		{description = "decrease volume", group = "media"})
+    		{description = "decrease volume", group = "media"}),
+
+    awful.key({ }, "Print", function() awful.spawn("flameshot gui") end,
+                {description = "take screenshot with flameshot", group = "misc"})
 )
 
 clientkeys = gears.table.join(
